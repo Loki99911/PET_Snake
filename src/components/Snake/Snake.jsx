@@ -6,13 +6,14 @@ const Snake = direction => {
 
   function createSnake(snakeLength) {
     for (const part of snakeLength) {
-      document.getElementById(part).append(<SnakeSq/>)
+      const snakeSqElement = React.createElement(SnakeSq);
+      document.getElementById(part).append(snakeSqElement);
     }
 
-    return field;
+    return;
   }
 
-    return <>{createSnake(fieldSize)}</>;
+    return <>{createSnake(snakeLength)}</>;
 };
 
 export default Snake;

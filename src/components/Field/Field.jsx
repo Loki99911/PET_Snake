@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { FieldSq, FieldWrapper } from './Field.styled';
+import Snake from 'components/Snake/Snake';
 
-const Field = () => {
+const Field = ({setCreated}) => {
   const fieldSize = { row: 20, col: 20 };
   const [direction, setDirection] = useState('');
+  // const [createdField, setCreated] = useState(false);
   const [snakeLength, setSnakeLength] = useState([1, 2, 3]);
 
   function createField(fieldSize) {
@@ -12,7 +14,7 @@ const Field = () => {
     for (let i = 1; i <= row * col; i++) {
       field.push(<FieldSq id={i} key={i}></FieldSq>);
     }
-
+    setCreated(true);
     return field;
   }
 
@@ -42,9 +44,14 @@ const Field = () => {
       document.removeEventListener('keydown', onKeyDown);
     };
   }, []);
- 
+
   return (
-    <FieldWrapper fieldSize={fieldSize}>{createField(fieldSize)}</FieldWrapper>
+    <>
+      <FieldWrapper fieldSize={fieldSize}>
+        {createField(fieldSize)}
+      </FieldWrapper>
+      {/* {createdField && <Snake />} */}
+    </>
   );
 };
 
