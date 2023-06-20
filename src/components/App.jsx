@@ -4,6 +4,7 @@ import Snake from './Snake/Snake';
 
 export const App = () => {
   const [createdField, setCreatedField] = useState(false);
+  const [snakeDirection, setSnakeDirection] = useState('Right');
 
   const handleFieldCreation = () => {
     setCreatedField(true);
@@ -11,8 +12,11 @@ export const App = () => {
 
   return (
     <>
-      <Field setCreated={handleFieldCreation} />
-      {createdField && <Snake />}
+      <Field
+        onFieldCreation={handleFieldCreation}
+        setSnakeDirection={setSnakeDirection}
+      />
+      {createdField && <Snake direction={snakeDirection} />}
     </>
   );
 };
