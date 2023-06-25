@@ -1,22 +1,14 @@
 import { useState } from 'react';
 import Field from './Field/Field';
-import Snake from './Snake/Snake';
-
+// import Snake from './Snake/Snake';
+import useControls from 'hooks/useControls';
 export const App = () => {
-  const [createdField, setCreatedField] = useState(false);
   const [snakeDirection, setSnakeDirection] = useState('Right');
 
-  const handleFieldCreation = () => {
-    setCreatedField(true);
-  };
-
+  useControls(setSnakeDirection);
   return (
     <>
-      <Field
-        onFieldCreation={handleFieldCreation}
-        setSnakeDirection={setSnakeDirection}
-      />
-      {createdField && <Snake direction={snakeDirection} />}
+      <Field snakeDirection={snakeDirection} />
     </>
   );
 };

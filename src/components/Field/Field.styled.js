@@ -13,4 +13,5 @@ export const FieldSq = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #808080;
+  transition: background-color 500ms ease-in;
 `;
