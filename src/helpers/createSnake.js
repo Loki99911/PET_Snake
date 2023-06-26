@@ -2,36 +2,51 @@ export const createSnake = (
   snake,
   direction,
   fieldSize,
-  setSnakeComponents
+  setSnakeComponents,
+  foodComponent,
+  setFoodComponent,
+  componentRefs
 ) => {
   const { row, col } = fieldSize;
   const newSnake = [...snake];
   const snakeHead = newSnake[newSnake.length - 1];
-  //   let nextSq;
-  newSnake.splice(0, 1);
+  let nextSq;
+
   switch (direction) {
     case 'Up':
-      snakeHead - col <= 0
-        ? newSnake.push(snakeHead + row * (col - 1))
-        : newSnake.push(snakeHead - col);
+      nextSq =
+        snakeHead - col <= 0 ? snakeHead + row * (col - 1) : snakeHead - col;
+      newSnake.push(nextSq);
       break;
     case 'Down':
-      snakeHead + col > col * row
-        ? newSnake.push((snakeHead + col) % col || col)
-        : newSnake.push(snakeHead + col);
+      nextSq =
+        snakeHead + col > col * row
+          ? (snakeHead + col) % col || col
+          : snakeHead + col;
+      newSnake.push(nextSq);
       break;
     case 'Left':
-      (snakeHead - 1) % col === 0
-        ? newSnake.push(snakeHead + col - 1)
-        : newSnake.push(snakeHead - 1);
+      nextSq =
+        (snakeHead - 1) % col === 0 ? snakeHead + col - 1 : snakeHead - 1;
+      newSnake.push(nextSq);
       break;
     case 'Right':
-      snakeHead % col === 0
-        ? newSnake.push(snakeHead - col + 1)
-        : newSnake.push(snakeHead + 1);
+      nextSq = snakeHead % col === 0 ? snakeHead - col + 1 : snakeHead + 1;
+      newSnake.push(nextSq);
       break;
     default:
       break;
   }
+
+  if (nextSq===foodComponent) {
+    const foodRef = componentRefs.current[foodComponent];
+    setFoodComponent(null);
+    foodRef.removeAttribute('style');
+  } else if (snake.includes(nextSq)) {
+    alert('GAME OVER');
+  } else {
+    newSnake.splice(0, 1);
+  }
+
   setSnakeComponents(newSnake);
 };
