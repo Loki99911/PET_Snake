@@ -4,8 +4,10 @@ export const createSnake = (
   fieldSize,
   setSnakeComponents,
   foodComponent,
+  foodPoint,
   setFoodComponent,
-  componentRefs
+  componentRefs,
+  setScore
 ) => {
   const { row, col } = fieldSize;
   const newSnake = [...snake];
@@ -38,10 +40,12 @@ export const createSnake = (
       break;
   }
 
-  if (nextSq===foodComponent) {
+  if (nextSq === foodComponent) {
     const foodRef = componentRefs.current[foodComponent];
+    setScore(prev => prev + foodPoint);
     setFoodComponent(null);
     foodRef.removeAttribute('style');
+    foodRef.innerText = '';
   } else if (snake.includes(nextSq)) {
     alert('GAME OVER');
   } else {

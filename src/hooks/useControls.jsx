@@ -1,7 +1,6 @@
 const { useEffect } = require("react");
 
 const useControls = setSnakeDirection => {
-    console.log(setSnakeDirection);
   useEffect(() => {
     const onKeyDown = e => {
       switch (e.key) {

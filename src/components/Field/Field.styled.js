@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const FieldWrapper = styled.div`
   display: grid;
-  grid-template-columns: ${({ fieldSize }) => `repeat(${fieldSize.col},40px)`};
-  grid-template-rows: ${({ fieldSize }) => `repeat(${fieldSize.row},40px)`};
+  grid-template-columns: ${({ fieldSize }) => `repeat(${fieldSize.col},30px)`};
+  grid-template-rows: ${({ fieldSize }) => `repeat(${fieldSize.row},30px)`};
   border-radius: 1px;
 `;
 
@@ -13,5 +13,6 @@ export const FieldSq = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #808080;
-  transition: background-color 500ms ease-in;
+  transition: background-color ${({ snakeSpeed }) =>
+   `${snakeSpeed}ms`} ease-in;
 `;
