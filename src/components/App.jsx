@@ -5,6 +5,7 @@ import Score from './Score/Score';
 import { LeftPart, PartsContainer, PauseBtn } from './App.styled';
 import RecordsList from './RecordsList/RecordsList';
 import axios from 'axios';
+
 export const App = () => {
   const [snakeDirection, setSnakeDirection] = useState('Right');
   const [counter, setCounter] = useState(0);
@@ -12,9 +13,8 @@ export const App = () => {
   const [speed, setSpeed] = useState(500);
   const [name, setName] = useState('');
   const [disableBtn, setDisableBtn] = useState(true);
-
-  axios.defaults.baseURL = 'http://localhost:8080';
-
+  const API_URL = process.env.REACT_APP_API_URL;
+  axios.defaults.baseURL = API_URL;
 
   useControls(setSnakeDirection);
 
