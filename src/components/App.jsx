@@ -15,6 +15,7 @@ export const App = () => {
   const [disableBtn, setDisableBtn] = useState(true);
   const API_URL = process.env.REACT_APP_API_URL;
   console.log(API_URL);
+  
   axios.defaults.baseURL = API_URL;
 
   useControls(setSnakeDirection);
