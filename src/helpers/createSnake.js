@@ -7,7 +7,8 @@ export const createSnake = (
   foodPoint,
   setFoodComponent,
   componentRefs,
-  setScore
+  setScore,
+  setGame
 ) => {
   const { row, col } = fieldSize;
   const newSnake = [...snake];
@@ -48,6 +49,7 @@ export const createSnake = (
     foodRef.innerText = '';
   } else if (snake.includes(nextSq)) {
     alert('GAME OVER');
+    setGame(true)
   } else {
     newSnake.splice(0, 1);
   }

@@ -4,14 +4,20 @@ import { createField } from 'helpers/createField';
 import { createSnake } from 'helpers/createSnake';
 import { createFood } from 'helpers/createFood';
 
-const Field = ({ snakeDirection, setScore, isPaused, snakeSpeed}) => {
+const Field = ({
+  snakeDirection,
+  setScore,
+  isPaused,
+  snakeSpeed,
+  setGame,
+  snakeComponents,
+  setSnakeComponents,
+}) => {
   const fieldSize = { row: 20, col: 20 };
   const componentRefs = useRef({});
-  const [snakeComponents, setSnakeComponents] = useState([1, 2, 3]);
   const [foodComponent, setFoodComponent] = useState(null);
   const [foodPoint, setFoodPoint] = useState(null);
   const [gameInterval, setGameInterval] = useState(null);
-  // const speed = score ? 500 : 500 - Math.ceil(score / 50) * 100;
 
   useEffect(() => {
     const targetRefs = snakeComponents.map(id => componentRefs.current[id]);
@@ -46,7 +52,8 @@ const Field = ({ snakeDirection, setScore, isPaused, snakeSpeed}) => {
           foodPoint,
           setFoodComponent,
           componentRefs,
-          setScore
+          setScore,
+          setGame
         );
         !foodComponent &&
           createFood(

@@ -5,7 +5,7 @@ export const createFood = (
   setFoodPoint
 ) => {
   const { row, col } = fieldSize;
-  const points = [10, 20, 30];
+  const points = [1, 5, 10];
   const foodSq = Math.round(Math.random() * row * col);
   const randomId = Math.round(Math.random() * (points.length - 1));
   setFoodPoint(points[randomId]);

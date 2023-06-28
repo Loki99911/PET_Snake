@@ -10,15 +10,26 @@ export const App = () => {
   const [snakeDirection, setSnakeDirection] = useState('Right');
   const [counter, setCounter] = useState(0);
   const [isPaused, setIsPaused] = useState(true);
+  const [snakeComponents, setSnakeComponents] = useState([1, 2, 3]);
   const [speed, setSpeed] = useState(500);
   const [name, setName] = useState('');
   const [disableBtn, setDisableBtn] = useState(true);
+  const [gameOver, setGameOver] = useState(true);
   const API_URL = process.env.REACT_APP_API_URL;
-  console.log(API_URL);
-  
+
   axios.defaults.baseURL = API_URL;
 
   useControls(setSnakeDirection);
+
+  useEffect(() => {
+      setSnakeDirection('Right');
+      setCounter(0);
+      setIsPaused(true);
+      setSnakeComponents([1, 2, 3]);
+      setSpeed(500);
+      setName('');
+      setDisableBtn(true);
+  }, [gameOver]);
 
   useEffect(() => {
     setSpeed(500 - Math.floor(counter / 50) * 100);
@@ -43,6 +54,9 @@ export const App = () => {
             setScore={setCounter}
             isPaused={isPaused}
             snakeSpeed={speed}
+            snakeComponents={snakeComponents}
+            setSnakeComponents={setSnakeComponents}
+            setGame={setGameOver}
           />
           <label>
             Name:
