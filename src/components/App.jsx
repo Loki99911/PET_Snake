@@ -4,13 +4,17 @@ import useControls from 'hooks/useControls';
 import Score from './Score/Score';
 import { LeftPart, PartsContainer, PauseBtn } from './App.styled';
 import RecordsList from './RecordsList/RecordsList';
+import axios from 'axios';
 export const App = () => {
   const [snakeDirection, setSnakeDirection] = useState('Right');
   const [counter, setCounter] = useState(0);
   const [isPaused, setIsPaused] = useState(true);
   const [speed, setSpeed] = useState(500);
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   const [disableBtn, setDisableBtn] = useState(true);
+
+  axios.defaults.baseURL = 'http://localhost:8080';
+
 
   useControls(setSnakeDirection);
 
@@ -26,7 +30,7 @@ export const App = () => {
     setName(event.target.value);
   };
   const handlePause = () => {
-    setIsPaused(!isPaused); 
+    setIsPaused(!isPaused);
   };
   return (
     <>
