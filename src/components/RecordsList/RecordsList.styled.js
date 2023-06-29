@@ -4,6 +4,7 @@ export const Table = styled.table`
   display: inline-block;
   width: 100%;
   border-collapse: collapse;
+  margin-left: 50px;
 `;
 
 export const TableHead = styled.thead`

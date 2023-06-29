@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Field from './Field/Field';
 import useControls from 'hooks/useControls';
 import Score from './Score/Score';
@@ -15,6 +15,7 @@ export const App = () => {
   const [name, setName] = useState('');
   const [disableBtn, setDisableBtn] = useState(true);
   const [gameOver, setGameOver] = useState(true);
+  const [scoresList, setScoresList] = useState([]);
   const API_URL = process.env.REACT_APP_API_URL;
 
   axios.defaults.baseURL = API_URL;
@@ -22,6 +23,7 @@ export const App = () => {
   useControls(setSnakeDirection);
 
   useEffect(() => {
+    if (gameOver) {
       setSnakeDirection('Right');
       setCounter(0);
       setIsPaused(true);
@@ -29,6 +31,7 @@ export const App = () => {
       setSpeed(500);
       setName('');
       setDisableBtn(true);
+    }
   }, [gameOver]);
 
   useEffect(() => {
@@ -45,13 +48,21 @@ export const App = () => {
   const handlePause = () => {
     setIsPaused(!isPaused);
   };
+
+  const memoizedRecordsList = useMemo(
+    () => <RecordsList scoresList={scoresList} setScoresList={setScoresList} />,
+    [scoresList]
+  );
+  console.log('gameOver', gameOver);
   return (
     <>
       <PartsContainer>
         <LeftPart>
           <Field
             snakeDirection={snakeDirection}
+            score={counter}
             setScore={setCounter}
+            name={name}
             isPaused={isPaused}
             snakeSpeed={speed}
             snakeComponents={snakeComponents}
@@ -72,7 +83,8 @@ export const App = () => {
           </PauseBtn>
           <Score counterValue={counter} />
         </LeftPart>
-        <RecordsList />
+        {memoizedRecordsList}
+        {/* <RecordsList scoresList={scoresList} setScoresList={setScoresList} /> */}
       </PartsContainer>
     </>
   );

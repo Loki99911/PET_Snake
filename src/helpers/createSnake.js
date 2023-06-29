@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const createSnake = (
   snake,
   direction,
@@ -7,8 +9,11 @@ export const createSnake = (
   foodPoint,
   setFoodComponent,
   componentRefs,
+  score,
   setScore,
-  setGame
+  name,
+  setGame,
+  setScoresList
 ) => {
   const { row, col } = fieldSize;
   const newSnake = [...snake];
@@ -48,8 +53,18 @@ export const createSnake = (
     foodRef.removeAttribute('style');
     foodRef.innerText = '';
   } else if (snake.includes(nextSq)) {
-    alert('GAME OVER');
-    setGame(true)
+    // alert('GAME OVER');
+    const newScore = {name,value:score}
+    axios
+      .post('/api/score',newScore)
+      .then(function (response) {
+        setScoresList(prev => [...prev, response]);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .finally(function () {});
+    setGame(true);
   } else {
     newSnake.splice(0, 1);
   }

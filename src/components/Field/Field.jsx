@@ -6,7 +6,9 @@ import { createFood } from 'helpers/createFood';
 
 const Field = ({
   snakeDirection,
+  score,
   setScore,
+  name,
   isPaused,
   snakeSpeed,
   setGame,
@@ -52,7 +54,9 @@ const Field = ({
           foodPoint,
           setFoodComponent,
           componentRefs,
+          score,
           setScore,
+          name,
           setGame
         );
         !foodComponent &&
