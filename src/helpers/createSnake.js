@@ -68,6 +68,5 @@ export const createSnake = (
   } else {
     newSnake.splice(0, 1);
   }
-
   setSnakeComponents(newSnake);
 };
