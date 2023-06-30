@@ -14,7 +14,7 @@ const RecordsList = ({ scoresList, setScoresList }) => {
         console.log(error);
       })
       .finally(function () {});
-  }, []);
+  }, [setScoresList]);
   
 console.log("records Render");
   return (
