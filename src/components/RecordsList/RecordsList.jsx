@@ -15,8 +15,7 @@ const RecordsList = ({ scoresList, setScoresList }) => {
       })
       .finally(function () {});
   }, [setScoresList]);
-  
-console.log("records Render");
+
   return (
     <Table>
       <TableHead>

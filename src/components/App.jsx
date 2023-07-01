@@ -49,11 +49,6 @@ export const App = () => {
     setIsPaused(!isPaused);
   };
 
-  // const memoizedRecordsList = useMemo(
-  //   () => <RecordsList scoresList={scoresList} setScoresList={setScoresList} />,
-  //   [scoresList]
-  // );
-  console.log('gameOver', gameOver);
   return (
     <>
       <PartsContainer>
