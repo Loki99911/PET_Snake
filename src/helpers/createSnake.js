@@ -53,8 +53,7 @@ export const createSnake = (
     foodRef.removeAttribute('style');
     foodRef.innerText = '';
   } else if (snake.includes(nextSq)) {
-    // alert('GAME OVER');
-    
+    // alert('GAME OVER');    
     const newScore = {name,value:score}
     axios
       .post('/api/score',newScore)
