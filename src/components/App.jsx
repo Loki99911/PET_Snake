@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';// useMemo,
 import Field from './Field/Field';
 import useControls from 'hooks/useControls';
 import Score from './Score/Score';
@@ -49,10 +49,10 @@ export const App = () => {
     setIsPaused(!isPaused);
   };
 
-  const memoizedRecordsList = useMemo(
-    () => <RecordsList scoresList={scoresList} setScoresList={setScoresList} />,
-    [scoresList]
-  );
+  // const memoizedRecordsList = useMemo(
+  //   () => <RecordsList scoresList={scoresList} setScoresList={setScoresList} />,
+  //   [scoresList]
+  // );
   console.log('gameOver', gameOver);
   return (
     <>
@@ -83,8 +83,8 @@ export const App = () => {
           </PauseBtn>
           <Score counterValue={counter} />
         </LeftPart>
-        {memoizedRecordsList}
-        {/* <RecordsList scoresList={scoresList} setScoresList={setScoresList} /> */}
+        {/* {memoizedRecordsList} */}
+        <RecordsList scoresList={scoresList} setScoresList={setScoresList} />
       </PartsContainer>
     </>
   );
