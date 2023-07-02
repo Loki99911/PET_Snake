@@ -13,8 +13,7 @@ const Field = ({
   snakeSpeed,
   setGame,
   snakeComponents,
-  setSnakeComponents,
-  setScoresList
+  setSnakeComponents
 }) => {
   const fieldSize = { row: 20, col: 20 };
   const componentRefs = useRef({});
@@ -32,7 +31,6 @@ const Field = ({
   useEffect(() => {
     if (foodComponent) {
       const foodRef = componentRefs.current[foodComponent];
-
       foodRef.style.backgroundColor = 'green';
       foodRef.style.borderRadius = '50%';
       foodRef.innerText = '+' + foodPoint;
@@ -58,8 +56,7 @@ const Field = ({
           score,
           setScore,
           name,
-          setGame,
-          setScoresList
+          setGame
         );
         !foodComponent &&
           createFood(

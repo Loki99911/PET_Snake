@@ -64,7 +64,6 @@ export const App = () => {
           snakeComponents={snakeComponents}
           setSnakeComponents={setSnakeComponents}
           setGame={setGameOver}
-          setScoresList={setScoresList}
         />
         <label>
           Name:
