@@ -59,12 +59,14 @@ export const createSnake = (
     foodRef.removeAttribute('style');
     foodRef.innerText = '';
     setGame(true);
-    const newScore = {name,value:score}
+    const newScore = { name, value: score };
     axios
-      .post('/api/score',newScore)
+      .post('/api/score', newScore)
       .then(function (response) {
-        console.log("RESP",response.data);
-        setScoresList(prev => [...prev, response.data]);
+        console.log('RESP', response.data);
+        setScoresList(prev => {
+          return [...prev, response.data];
+        });
       })
       .catch(function (error) {
         console.log(error);
