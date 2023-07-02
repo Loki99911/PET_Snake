@@ -23,7 +23,6 @@ export const App = () => {
   useControls(setSnakeDirection);
 
   useEffect(() => {
-    console.log('UseEffect GameOver', gameOver);
     if (gameOver) {
       setSnakeDirection('Right');
       setCounter(0);
@@ -52,7 +51,7 @@ export const App = () => {
       setGameOver(false);
     }
   };
-  console.log('snakeComponents', snakeComponents);
+
   return (
     <PartsContainer>
       <LeftPart>
@@ -81,7 +80,6 @@ export const App = () => {
         </PauseBtn>
         <Score counterValue={counter} />
       </LeftPart>
-      {/* {memoizedRecordsList} */}
       <RecordsList
         scoresList={scoresList}
         setScoresList={setScoresList}
