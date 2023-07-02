@@ -64,7 +64,7 @@ export const createSnake = (
       .post('/api/score',newScore)
       .then(function (response) {
         console.log("GameOVER_Resp",response);
-        setScoresList(prev => [...prev, response]);
+        setScoresList(prev => [...prev, response.data]);
       })
       .catch(function (error) {
         console.log(error);
