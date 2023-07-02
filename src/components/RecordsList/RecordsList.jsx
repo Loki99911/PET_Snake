@@ -21,7 +21,6 @@ const RecordsList = ({ scoresList, setScoresList, gameOver }) => {
       })
       .finally(function () {});
   }, [setScoresList]);
-console.log("scoresListCOMP", scoresList);
   return (
     <Table>
       <TableHead>

@@ -63,8 +63,9 @@ export const createSnake = (
     axios
       .post('/api/score', newScore)
       .then(function (response) {
-        console.log('RESP', response.data);
         setScoresList(prev => {
+          console.log('prev', prev);
+          console.log('RESP', response.data);
           return [...prev, response.data];
         });
       })
