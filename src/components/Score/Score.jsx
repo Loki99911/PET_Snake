@@ -1,6 +1,8 @@
+import { ScoreText } from "./Score.styled";
+
 const Score = ({ counterValue }) => {
 
-  return <p>Score: {counterValue}</p>;
+  return <ScoreText>Score: {counterValue}</ScoreText>;
 };
 
 export default Score;

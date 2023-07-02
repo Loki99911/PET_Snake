@@ -25,7 +25,8 @@ const Field = ({
   useEffect(() => {
     const targetRefs = snakeComponents.map(id => componentRefs.current[id]);
     targetRefs.forEach(ref => {
-      ref.style.backgroundColor = 'green';
+      ref.style.backgroundColor = '#ff00c8';
+      ref.style.border = '1px solid transparent';
       ref.style.borderRadius = '5px';
     });
   }, [snakeComponents]);
