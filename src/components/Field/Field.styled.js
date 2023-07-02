@@ -15,5 +15,5 @@ export const FieldSq = styled.div`
   justify-content: center;
   align-items: center;
   transition: background-color ${({ snakeSpeed }) =>
-   `${snakeSpeed}ms`} ease-in;
+  `${snakeSpeed}ms`} ease-in;
 `;

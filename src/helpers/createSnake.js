@@ -64,8 +64,6 @@ export const createSnake = (
       .post('/api/score', newScore)
       .then(function (response) {
         setScoresList(prev => {
-          console.log('prev', prev);
-          console.log('RESP', response.data);
           return [...prev, response.data];
         });
       })

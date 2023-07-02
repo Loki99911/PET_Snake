@@ -14,7 +14,6 @@ const RecordsList = ({ scoresList, setScoresList, gameOver }) => {
     axios
       .get('/api/score')
       .then(function (response) {
-        console.log('response', response);
         setScoresList(response.data);
       })
       .catch(function (error) {
