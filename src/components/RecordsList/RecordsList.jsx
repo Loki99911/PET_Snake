@@ -10,18 +10,17 @@ import {
 
 const RecordsList = ({ scoresList, setScoresList, gameOver }) => {
   useEffect(() => {
-    if (gameOver) {
-      axios
-        .get('/api/score')
-        .then(function (response) {
-          setScoresList(response.data);
-        })
-        .catch(function (error) {
-          console.log(error);
-        })
-        .finally(function () {});
-    }
-  }, [setScoresList, gameOver]);
+    axios
+      .get('/api/score')
+      .then(function (response) {
+        console.log('response', response);
+        setScoresList(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .finally(function () {});
+  }, [setScoresList]);
 
   return (
     <Table>

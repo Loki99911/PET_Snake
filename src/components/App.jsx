@@ -51,7 +51,7 @@ export const App = () => {
       setGameOver(false);
     }
   };
-
+  console.log('APPscoresList', scoresList);
   return (
     <PartsContainer>
       <LeftPart>
