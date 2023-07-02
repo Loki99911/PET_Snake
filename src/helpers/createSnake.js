@@ -63,6 +63,7 @@ export const createSnake = (
     axios
       .post('/api/score',newScore)
       .then(function (response) {
+        console.log("GameOVER_Resp",response);
         setScoresList(prev => [...prev, response]);
       })
       .catch(function (error) {
