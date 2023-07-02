@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import {
   Table,
+  TableBody,
   TableCell,
   TableHead,
   TableHeadCell,
@@ -30,7 +31,7 @@ const RecordsList = ({ scoresList, setScoresList, gameOver }) => {
           <TableHeadCell>Score</TableHeadCell>
         </TableRow>
       </TableHead>
-      <tbody>
+      <TableBody>
         {scoresList
           .sort((a, b) => b.value - a.value)
           .map((score, index) => (
@@ -40,7 +41,7 @@ const RecordsList = ({ scoresList, setScoresList, gameOver }) => {
               <TableCell>{score.value}</TableCell>
             </TableRow>
           ))}
-      </tbody>
+      </TableBody>
     </Table>
   );
 };

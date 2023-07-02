@@ -2,7 +2,16 @@ import { useEffect, useState } from 'react'; // useMemo,
 import Field from './Field/Field';
 import useControls from 'hooks/useControls';
 import Score from './Score/Score';
-import { LeftPart, PartsContainer, PauseBtn } from './App.styled';
+import {
+  Footer,
+  Header,
+  LeftPart,
+  MainHeader,
+  NameInput,
+  NameLabel,
+  PartsContainer,
+  PauseBtn,
+} from './App.styled';
 import RecordsList from './RecordsList/RecordsList';
 import axios from 'axios';
 
@@ -20,7 +29,7 @@ export const App = () => {
 
   axios.defaults.baseURL = API_URL;
 
-  useControls({snakeDirection,setSnakeDirection});
+  useControls({ snakeDirection, setSnakeDirection });
 
   useEffect(() => {
     if (gameOver) {
@@ -52,39 +61,55 @@ export const App = () => {
     }
   };
   return (
-    <PartsContainer>
-      <LeftPart>
-        <Field
-          snakeDirection={snakeDirection}
-          score={counter}
-          setScore={setCounter}
-          name={name}
-          isPaused={isPaused}
-          snakeSpeed={speed}
-          snakeComponents={snakeComponents}
-          setSnakeComponents={setSnakeComponents}
-          setGame={setGameOver}
-          setScoresList={setScoresList}
-        />
-        <label>
-          Name:
-          <input
-            type="text"
-            value={name}
-            onChange={handleNameChange}
-            placeholder="Please, input your name!"
+    <>
+      <Header>
+        <MainHeader>Snake</MainHeader>
+      </Header>
+      <PartsContainer>
+        <LeftPart>
+          <Field
+            snakeDirection={snakeDirection}
+            score={counter}
+            setScore={setCounter}
+            name={name}
+            isPaused={isPaused}
+            snakeSpeed={speed}
+            snakeComponents={snakeComponents}
+            setSnakeComponents={setSnakeComponents}
+            setGame={setGameOver}
+            setScoresList={setScoresList}
           />
-        </label>
-        <PauseBtn onClick={handlePause} disabled={disableBtn}>
-          {isPaused ? 'Resume' : 'Pause'}
-        </PauseBtn>
-        <Score counterValue={counter} />
-      </LeftPart>
-      <RecordsList
-        scoresList={scoresList}
-        setScoresList={setScoresList}
-        gameOver={gameOver}
-      />
-    </PartsContainer>
+          <NameLabel>
+            <b>Name:</b>
+            <NameInput
+              type="text"
+              value={name}
+              maxLength={30}
+              onChange={handleNameChange}
+              placeholder="Please, input your name! (max-30 symbol)"
+            />
+          </NameLabel>
+          <PauseBtn onClick={handlePause} disabled={disableBtn}>
+            {isPaused ? 'Play' : 'Pause'}
+          </PauseBtn>
+          <Score counterValue={counter} />
+        </LeftPart>
+        <RecordsList
+          scoresList={scoresList}
+          setScoresList={setScoresList}
+          gameOver={gameOver}
+        />
+      </PartsContainer>
+      <Footer>
+        <p>
+          Prodused by:{' '}
+          <i>
+            <a href="https://www.linkedin.com/in/mykyta-kresik/">
+              Mykyta Kresik
+            </a>
+          </i>
+        </p>
+      </Footer>
+    </>
   );
 };

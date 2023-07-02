@@ -3,11 +3,24 @@ import styled from 'styled-components';
 export const Table = styled.table`
   display: inline;
   border-collapse: collapse;
-  margin-left: 50px;
+  margin: 0 auto;
+  @media screen and (min-width: 1280px) {
+    display: inline;
+    border-collapse: collapse;
+    margin: 0;
+    margin-left: 30px;
+  }
 `;
 
 export const TableHead = styled.thead`
   background-color: #f2f2f2;
+  border: 2px solid black;
+
+`;
+
+export const TableBody = styled.tbody`
+  background-color: #f2f2f2;
+  border: 2px solid black;
 `;
 
 export const TableHeadCell = styled.th`

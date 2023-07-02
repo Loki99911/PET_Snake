@@ -25,14 +25,15 @@ const Field = ({
   useEffect(() => {
     const targetRefs = snakeComponents.map(id => componentRefs.current[id]);
     targetRefs.forEach(ref => {
-      ref.style.backgroundColor = 'red';
+      ref.style.backgroundColor = 'green';
+      ref.style.borderRadius = '5px';
     });
   }, [snakeComponents]);
 
   useEffect(() => {
     if (foodComponent) {
       const foodRef = componentRefs.current[foodComponent];
-      foodRef.style.backgroundColor = 'green';
+      foodRef.style.backgroundColor = 'greenyellow';
       foodRef.style.borderRadius = '50%';
       foodRef.innerText = '+' + foodPoint;
     }

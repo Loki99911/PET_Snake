@@ -5,14 +5,15 @@ export const FieldWrapper = styled.div`
   grid-template-columns: ${({ fieldSize }) => `repeat(${fieldSize.col},30px)`};
   grid-template-rows: ${({ fieldSize }) => `repeat(${fieldSize.row},30px)`};
   border-radius: 1px;
+  border: 2px solid black;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
 `;
 
 export const FieldSq = styled.div`
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #808080;
   transition: background-color ${({ snakeSpeed }) =>
    `${snakeSpeed}ms`} ease-in;
 `;
