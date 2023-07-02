@@ -14,6 +14,7 @@ const Field = ({
   setGame,
   snakeComponents,
   setSnakeComponents,
+  setScoresList
 }) => {
   const fieldSize = { row: 20, col: 20 };
   const componentRefs = useRef({});
@@ -57,7 +58,8 @@ const Field = ({
           score,
           setScore,
           name,
-          setGame
+          setGame,
+          setScoresList
         );
         !foodComponent &&
           createFood(
