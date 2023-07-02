@@ -20,7 +20,7 @@ export const App = () => {
 
   axios.defaults.baseURL = API_URL;
 
-  useControls(setSnakeDirection);
+  useControls({snakeDirection,setSnakeDirection});
 
   useEffect(() => {
     if (gameOver) {

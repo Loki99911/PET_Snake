@@ -1,20 +1,20 @@
-const { useEffect } = require("react");
+const { useEffect } = require('react');
 
-const useControls = setSnakeDirection => {
+const useControls = ({ snakeDirection, setSnakeDirection }) => {
   useEffect(() => {
     const onKeyDown = e => {
       switch (e.key) {
-          case 'ArrowUp':
-          setSnakeDirection('Up');
+        case 'ArrowUp':
+          snakeDirection !== 'Down' && setSnakeDirection('Up');
           break;
         case 'ArrowDown':
-          setSnakeDirection('Down');
+          snakeDirection !== 'Up' && setSnakeDirection('Down');
           break;
         case 'ArrowLeft':
-          setSnakeDirection('Left');
+          snakeDirection !== 'Right' && setSnakeDirection('Left');
           break;
         case 'ArrowRight':
-          setSnakeDirection('Right');
+          snakeDirection !== 'Left' && setSnakeDirection('Right');
           break;
         default:
           break;
@@ -26,7 +26,7 @@ const useControls = setSnakeDirection => {
     return () => {
       document.removeEventListener('keydown', onKeyDown);
     };
-  }, [setSnakeDirection]);
+  }, [setSnakeDirection, snakeDirection]);
 };
 
 export default useControls;
