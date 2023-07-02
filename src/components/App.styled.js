@@ -2,10 +2,23 @@ import styled from 'styled-components';
 
 export const PartsContainer = styled.main`
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 320px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex-direction: row;
+    width: 1280px;
+  }
 `;
 
-export const LeftPart = styled.div`
+export const LeftPart = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;

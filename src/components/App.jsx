@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';// useMemo,
+import { useEffect, useState } from 'react'; // useMemo,
 import Field from './Field/Field';
 import useControls from 'hooks/useControls';
 import Score from './Score/Score';
@@ -50,37 +50,35 @@ export const App = () => {
   };
 
   return (
-    <>
-      <PartsContainer>
-        <LeftPart>
-          <Field
-            snakeDirection={snakeDirection}
-            score={counter}
-            setScore={setCounter}
-            name={name}
-            isPaused={isPaused}
-            snakeSpeed={speed}
-            snakeComponents={snakeComponents}
-            setSnakeComponents={setSnakeComponents}
-            setGame={setGameOver}
+    <PartsContainer>
+      <LeftPart>
+        <Field
+          snakeDirection={snakeDirection}
+          score={counter}
+          setScore={setCounter}
+          name={name}
+          isPaused={isPaused}
+          snakeSpeed={speed}
+          snakeComponents={snakeComponents}
+          setSnakeComponents={setSnakeComponents}
+          setGame={setGameOver}
+        />
+        <label>
+          Name:
+          <input
+            type="text"
+            value={name}
+            onChange={handleNameChange}
+            placeholder="Please, input your name!"
           />
-          <label>
-            Name:
-            <input
-              type="text"
-              value={name}
-              onChange={handleNameChange}
-              placeholder="Please, input your name!"
-            />
-          </label>
-          <PauseBtn onClick={handlePause} disabled={disableBtn}>
-            {isPaused ? 'Resume' : 'Pause'}
-          </PauseBtn>
-          <Score counterValue={counter} />
-        </LeftPart>
-        {/* {memoizedRecordsList} */}
-        <RecordsList scoresList={scoresList} setScoresList={setScoresList} />
-      </PartsContainer>
-    </>
+        </label>
+        <PauseBtn onClick={handlePause} disabled={disableBtn}>
+          {isPaused ? 'Resume' : 'Pause'}
+        </PauseBtn>
+        <Score counterValue={counter} />
+      </LeftPart>
+      {/* {memoizedRecordsList} */}
+      <RecordsList scoresList={scoresList} setScoresList={setScoresList} />
+    </PartsContainer>
   );
 };
