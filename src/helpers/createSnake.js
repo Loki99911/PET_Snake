@@ -70,7 +70,8 @@ export const createSnake = (
       .catch(function (error) {
         console.log(error);
       })
-      .finally(function () {});
+      .finally(function () { });
+    alert(`You Loose( Your score - ${score}`)
   } else {
     newSnake.splice(0, 1);
   }
