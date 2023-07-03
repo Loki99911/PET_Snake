@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const createSnake = (
   snake,
@@ -71,7 +72,7 @@ export const createSnake = (
         console.log(error);
       })
       .finally(function () { });
-    alert(`You Loose( Your score - ${score}`)
+    toast.error(`You Loose!( Your score: ${score}`);
   } else {
     newSnake.splice(0, 1);
   }
