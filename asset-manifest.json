@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/PET_Snake/static/css/main.bff8437c.css",
-    "main.js": "/PET_Snake/static/js/main.71d0f65e.js",
-    "static/media/green-fake-grass-background.jpg": "/PET_Snake/static/media/green-fake-grass-background.c6d5cbaee0d000d2833a.jpg",
+    "main.css": "/PET_Snake/static/css/main.ca2bc2b7.css",
+    "main.js": "/PET_Snake/static/js/main.2311afbc.js",
+    "static/media/green-fake-grass-background.jpg": "/PET_Snake/static/media/green-fake-grass-background.2022fe264a1d014c08c9.jpg",
     "index.html": "/PET_Snake/index.html",
-    "main.bff8437c.css.map": "/PET_Snake/static/css/main.bff8437c.css.map",
-    "main.71d0f65e.js.map": "/PET_Snake/static/js/main.71d0f65e.js.map"
+    "main.ca2bc2b7.css.map": "/PET_Snake/static/css/main.ca2bc2b7.css.map",
+    "main.2311afbc.js.map": "/PET_Snake/static/js/main.2311afbc.js.map"
   },
   "entrypoints": [
-    "static/css/main.bff8437c.css",
-    "static/js/main.71d0f65e.js"
+    "static/css/main.ca2bc2b7.css",
+    "static/js/main.2311afbc.js"
   ]
 }
