@@ -43,6 +43,9 @@ The project is built with React using Styled-components for styling.
 6. Good luck!
 ***
 
+## BACK-END
+Link: **[https://github.com/Loki99911/Snake_api](https://github.com/Loki99911/Snake_api)**
+
 ## Developed by:
 _Junior Frontend Developer - Nikita Kresik_:
 **[GitHub](https://github.com/Loki99911)**,
