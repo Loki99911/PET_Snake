@@ -8,7 +8,7 @@ This is a repository for playing game "Snake".Also for demonstrations the capabi
 ### Use on-line
 
 To use the application online, you can use a direct link on GitHub:
-![https://loki99911.github.io/PET_Snake/](./img/GHLink.JPG)
+![https://loki99911.github.io/PET_Snake/](./assets/GHLink.JPG)
 
  Or faster you can use this link: **[https://loki99911.github.io/PET_Snake/](https://loki99911.github.io/PET_Snake/)**
  
@@ -24,7 +24,7 @@ To use the application localy, follow next steps:
 5. It will open a new tab in the your browser: *http://localhost:3000*.
 
 #### If you have done everything correctly, you will see the following pages:
-![Main page](./img/MainPage.JPG)
+![Main page](./assets/MainPage.JPG)
 ***
 
 ## Technologies
