@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/PET_Snake/static/css/main.ca2bc2b7.css",
-    "main.js": "/PET_Snake/static/js/main.2311afbc.js",
+    "main.css": "/PET_Snake/static/css/main.75aecb4b.css",
+    "main.js": "/PET_Snake/static/js/main.e469ac7d.js",
     "static/media/green-fake-grass-background.jpg": "/PET_Snake/static/media/green-fake-grass-background.2022fe264a1d014c08c9.jpg",
     "index.html": "/PET_Snake/index.html",
-    "main.ca2bc2b7.css.map": "/PET_Snake/static/css/main.ca2bc2b7.css.map",
-    "main.2311afbc.js.map": "/PET_Snake/static/js/main.2311afbc.js.map"
+    "main.75aecb4b.css.map": "/PET_Snake/static/css/main.75aecb4b.css.map",
+    "main.e469ac7d.js.map": "/PET_Snake/static/js/main.e469ac7d.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca2bc2b7.css",
-    "static/js/main.2311afbc.js"
+    "static/css/main.75aecb4b.css",
+    "static/js/main.e469ac7d.js"
   ]
 }
