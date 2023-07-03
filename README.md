@@ -1,19 +1,16 @@
 # Snake
 
-This is a repository for playing game "Snake".Also for demonstrations the capabilities of React and CSS.
+This is a repository for playing game "Snake".Also for demonstrations the capabilities of React, Node.JS and PostgreSQL.
 ***
 
 ## How to use
 
 ### Use on-line
 
-To use the application online, you need:
-1. Clone the repository to your computer: `git clone` *https://github.com/Loki99911/PET_Snake*
-2. Navigate to the project directory: `cd UserCardFollowers`
-3. Install dependencies of project: input `npm install` in console.
-4. Start the development server: `npm start`
-5. It will open in: *http://localhost:8080*.
-6. Then use this link: **[https://loki99911.github.io/PET_Snake/](https://loki99911.github.io/PET_Snake/)**
+To use the application online, you can use a direct link on GitHub:
+![https://loki99911.github.io/PET_Snake/](./img/GHLink.JPG)
+
+ Or faster you can use this link: **[https://loki99911.github.io/PET_Snake/](https://loki99911.github.io/PET_Snake/)**
  
 
 ### Use localy
@@ -29,16 +26,18 @@ To use the application localy, follow next steps:
 
 ## Technologies
 
-The project is built with Native JS using Native CSS for styling.
+The project is built with React using Styled-components for styling.
 ***
 
 ## Rules
 
-1. To start the game, you need to drag your ships onto the field or use a random arrangement.
-2. Ships cannot stay close to each other.
-3. To make a shot, you need to click on the selected cell on the enemy field.
-4. If you hit the ship, then shoot again.
-5. Good luck!
+1. To start the game, you need to input your name.
+2. Press "start".
+3. To change the direction of movement of the Snake, use the arrows on the keyboard.
+4. The snake is not limited by the field, and if it crawls out of the frame, it will immediately appear on the opposite side.
+5. If the Snake rests on itself, then the game will end.
+6. The game can be started and paused by pressing the button Play/Pause.
+6. Good luck!
 ***
 
 ## Developed by:
