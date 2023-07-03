@@ -23,6 +23,9 @@ To use the application localy, follow next steps:
 4. Start the development server: `npm start`
 5. It will open a new tab in the your browser: *http://localhost:3000*.
 
+#### If you have done everything correctly, you will see the following pages:
+![Main page](./img/MainPage.JPG)
+***
 
 ## Technologies
 
